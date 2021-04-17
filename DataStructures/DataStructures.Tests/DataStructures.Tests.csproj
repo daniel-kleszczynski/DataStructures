@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="CustomStackTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SingleLinkedListTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
