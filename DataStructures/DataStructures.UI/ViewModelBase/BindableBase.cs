@@ -5,11 +5,14 @@ namespace DataStructures.UI.ViewModelBase
 {
     public abstract class BindableBase : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged = delegate { };
+        public virtual event PropertyChangedEventHandler PropertyChanged = delegate { };
 
-        public void SetProperty<T>(ref T propertyValue, T newValue, [CallerMemberName] string propertyName = null)
+        public void SetProperty<T>(ref T property, T value, [CallerMemberName] string propertyName = null)
         {
-            propertyValue = newValue;
+            if (property.Equals(value))
+                return;
+
+            property = value;
             OnPropertyChanged(propertyName);
         }
 
