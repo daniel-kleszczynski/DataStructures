@@ -3,7 +3,7 @@ using NUnit.Framework;
 using System;
 using System.Linq;
 
-namespace DataStructures.Tests
+namespace DataStructures.LibTests
 {
     [TestFixture]
     public class CustomStackTests
