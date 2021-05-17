@@ -22,6 +22,7 @@ namespace DataStructures.UI
     {
         public MainWindow()
         {
+            this.DataContext = new MainWindowViewModel();
             InitializeComponent();
         }
     }
