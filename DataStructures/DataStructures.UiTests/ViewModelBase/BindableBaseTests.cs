@@ -1,4 +1,4 @@
-﻿using DataStructures.UI.ViewModelBase;
+﻿using DataStructures.UI.ViewModels.Base;
 using NUnit.Framework;
 
 namespace DataStructures.UiTests.ViewModelBase

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace DataStructures.UI.ViewModelBase
+namespace DataStructures.UI.ViewModels.Base
 {
     public abstract class BindableBase : INotifyPropertyChanged
     {
@@ -9,7 +9,10 @@ namespace DataStructures.UI.ViewModelBase
 
         public void SetProperty<T>(ref T property, T value, [CallerMemberName] string propertyName = null)
         {
-            if (property.Equals(value))
+            if (property == null && value == null)
+                return;
+
+            if (property?.Equals(value) == true)
                 return;
 
             property = value;

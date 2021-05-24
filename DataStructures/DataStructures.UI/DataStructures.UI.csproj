@@ -57,7 +57,16 @@
     </ApplicationDefinition>
     <Compile Include="Behaviors\LoadedEvent.cs" />
     <Compile Include="Command\RelayCommand.cs" />
-    <Compile Include="ViewModelBase\BindableBase.cs" />
+    <Compile Include="ViewModels\Base\IDataStructureViewModel.cs" />
+    <Compile Include="Views\DataStructureAxView.xaml.cs">
+      <DependentUpon>DataStructureAxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\DataStructureAyViewModel.cs" />
+    <Compile Include="ViewModels\Base\BindableBase.cs" />
+    <Compile Include="ViewModels\DataStructureAxViewModel.cs" />
+    <Compile Include="Views\DataStructureAyView.xaml.cs">
+      <DependentUpon>DataStructureAyView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -70,6 +79,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\DataStructureAxView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DataStructureAyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainWindowViewModel.cs" />
@@ -98,5 +115,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,10 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataStructures.UI"
         xmlns:behav="clr-namespace:DataStructures.UI.Behaviors"
+        xmlns:vM="clr-namespace:DataStructures.UI.ViewModels"
+        xmlns:v="clr-namespace:DataStructures.UI.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         behav:LoadedEvent.OnLoaded="{Binding OnLoadedCommand}">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vM:DataStructureAxViewModel}">
+            <v:DataStructureAxView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vM:DataStructureAyViewModel}">
+            <v:DataStructureAyView />
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
-        <TextBlock Text="{Binding ExampleText}"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <ComboBox ItemsSource="{Binding DataStructures}" SelectedItem="{Binding SelectedDataStructure}" 
+                  DisplayMemberPath="StructureName" Width="200" Margin="10"></ComboBox>
+        <ContentControl Grid.Row="1" Content="{Binding SelectedDataStructure}"/>
     </Grid>
 </Window>
